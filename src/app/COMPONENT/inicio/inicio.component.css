@@ -1,0 +1,228 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+/*Zona para Slider*/
+
+.container{
+  overflow: hidden;
+  margin-top: 10px;
+}
+.carousel-caption{
+  margin-bottom: 40px;
+}
+.carousel{
+  width: auto;
+  height: 340px;
+  max-height: 340px;
+}
+
+.slider2_btn {
+  display: block;
+  border: 1px solid #ff4e00;
+  color: white;
+  padding: 10px;
+  width: 150px;
+  margin: 1px auto;
+  border-radius: 3%;
+  transition: all 0.5s;
+}
+
+.slider2__btn:hover {
+  /*dEFINE EL COLOR QUE VA TENER CUANDO EL BOTÓN PASA POR ENCIMA*/
+  z-index: 99999999;
+  background: orange;
+
+}
+
+
+
+/*Para la transiciones raras*
+/*Imagenes dinamicas para mostrar nuestros servicios*/
+
+.container__endmain {
+  margin-top: 50px;
+}
+
+.endmain__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.endmain__item {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.editor__circle {
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -320px;
+  right: -200px;
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 10px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  transition: all 0.5s;
+}
+
+.endmain__item:hover .editor__circle {
+  /*Ojo a espacio entre hover . porque puedo no servir por esto*/
+  transform: scale(1.2);
+  bottom: -90px;
+  right: -20px;
+}
+
+.endmain__item:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.endmain__item:hover:before {
+  opacity: 1;
+}
+
+/*Estilos para los productos*/
+.main-tittle{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.container-products {
+  /*FUncion Grip muy util para temas de galerias*/
+  /*Ojo funcion flexbox es otr función para otras utilidades*/
+  display: grid; /*Tipo Grid es parecido a flex pero me permite colocar las columnas que yo desee*/
+  grid-template-columns: repeat(2, 1fr); /*Otra forma de poner columnas*/
+  grid-gap: 10px;
+}
+.product {
+  border: 1px solid #cccccc;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.product:before {
+  /*Con esto creamos la label de Nuevo
+  Ojo a un detalle importante el postion RELATIVE ES FUNDAMENTAL
+  EN EL "PRODUCT" PORQUE SINO SE SUBE HASTA ARRIBA DE LA PAGINA
+  ESTO SOLO LO DEJA DENTRO DE LA CLASE.
+  */
+  width: 60px;
+  content: "NUEVO";
+  font-size: 0.6em;
+  background: #ff4e00;
+  padding: 5px 15px;
+  position: absolute;
+  top: 20px;
+  right: -8px;
+  transform: rotate(-90deg);
+  color: white;
+}
+.product__img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product__tittle {
+  font-size: 1.5em;
+  font-weight: italic;
+  color: gray;
+  text-align: center;
+  top: 80%;
+  position: relative;
+  align-items: center;
+}
+.product__price {
+  font-weight: bold;
+  color: #357ec7;
+  position: relative;
+}
+
+.product_icon {
+  display: block;
+  margin-top: 10px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+}
+/*Aquí utilizo esta estructura para que al pasar por toda la imagen cambie el hover*/
+.product:hover .product_icon {
+  color: #FF4E00;
+}
+.product__description{
+  font-size: small;
+}
+
+/**Media Queries */
+/*Responsive design*/
+/*Estilos respoonsives para tablet*/
+@media screen and (min-width: 768px) {
+
+  .endmain__item {
+    height: 200px;
+    width: 100%;
+  }
+  .container__endmain {
+    display: flex;
+  }
+  .carousel{
+    width: auto;
+    height: 500px;
+    max-height: 500px;
+  }
+  .carousel-caption{
+    margin-bottom: 300px;
+  }
+  .container-products {
+    /*FUncion Grip muy util para temas de galerias*/
+    /*Ojo funcion flexbox es otr función para otras utilidades*/
+    display: grid; /*Tipo Grid es parecido a flex pero me permite colocar las columnas que yo desee*/
+    grid-template-columns: repeat(3, 1fr); /*Otra forma de poner columnas*/
+    grid-gap: 10px;
+  }
+  .product__img {
+    width: 240px;
+    height: 350px;
+
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .endmain__item {
+    height: 300px;
+    width: 100%;
+  }
+  .carousel{
+    width: auto;
+    height: 700px;
+    max-height: 700px;
+  }
+  .carousel-caption{
+    margin-bottom: 450px;
+  }
+  .container-products {
+    grid-template-columns: repeat(5 , 1fr); /*Otra forma de poner columnas*/
+  }
+}

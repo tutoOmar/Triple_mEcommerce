@@ -1,0 +1,5 @@
+ng g c COMPONENT/registeR --module=app.module
+
+Si el modulo no se deja crear y aparece este error, utilizar el anterior comando
+
+"More than one module matches. Use the '--skip-import' option to skip importing the component into the closest module or use the module option to specify a module."

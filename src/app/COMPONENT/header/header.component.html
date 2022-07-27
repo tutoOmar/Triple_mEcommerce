@@ -1,0 +1,55 @@
+<header class="main-header">
+  <div class="container container--flex">
+    <! Sirve para limitar el contenido de la pagina--->
+    <div class="main-header__container container__1">
+      <h1 class="main-header__tittle container__2">Triple M</h1>
+
+      <button mat-icon-button class="example-icon icon-menu" aria-label="Example icon-button with menu icon" (click)="nav_expand()" id="btn-menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav" id="main-nav" [ngClass]="nav_bar_class">
+        <ul class="menu">
+          <li class="menu__item">
+            <a class="menu__link" routerLink="/inicio" (click)="nav_expand()">Inicio</a>
+          </li>
+          <li class="menu__item">
+            <a  class="menu__link" routerLink="/product" (click)="nav_expand()">Productos</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" routerLink="/aboutus" (click)="nav_expand()">Sobre nosotros</a>
+          </li>
+          <li class="menu__item">
+            <a  class="menu__link" routerLink="/promos" (click)="nav_expand()">Promos</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" routerLink="/contact" (click)="nav_expand()">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-header__container container__2">
+      <span class="main-header__txt"> ¿Necesitas ayuda?</span>
+      <p class="main-header__number">
+        <i class="fa-solid fa-phone"></i> Llamar +57 3107507397
+      </p>
+    </div>
+
+    <div class="main-header__container container__3">
+      <a routerLink="login" class="main-header__userlink"
+        ><i class="fa-solid fa-user"> </i> {{dataService.userName}}</a>
+      <a href="" class="main-header__btn" routerLink="/cart">
+        Carrito <i class="fa-solid fa-cart-shopping"></i
+      ></a>
+      <div class="lupa_input">
+        <input
+          type="search"
+          class="main-header__input"
+          placeholder="Buscar productos"
+        /><i class="lupa fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+

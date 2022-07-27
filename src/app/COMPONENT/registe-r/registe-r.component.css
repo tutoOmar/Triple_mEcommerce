@@ -1,0 +1,103 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top:15%;
+  left: 25%;
+  margin: -50px 0 0 -50px;
+}
+
+.form__group{
+  position: relative;
+  --color: #5757577e;
+}
+
+.form__input{
+  width: 90%;
+  font-family: inherit;
+  font-size: 1em;
+  color: #706c6c;
+  padding: .6em .3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color);
+  background-color: #c1dac3;
+}
+.form__label{
+  color: var(--color);
+  cursor:pointer;
+  position: absolute;
+  top:0;
+  left:5px;
+  transform: translateY(10px);
+  transition: transform .5s, color .3s;
+}
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown)+.form__label{
+  transform: translateY(-12px) scale(.7);
+  transform-origin:top left;
+  --color: #f2f7ff;
+}
+.container{
+  width: 400px;
+
+  height: 500px;
+  margin:auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color:#c1dac3;
+  border-radius: 50px;
+  position: relative;
+}
+
+.demo {
+  -webkit-box-shadow: 13px 16px 10px 6px rgba(163,163,163,0.71);
+  box-shadow: 13px 16px 10px 6px rgba(163,163,163,0.71);
+  }
+.form_title{
+  font-size: 2.2em;
+  color:rgb(250, 255, 253);
+}
+
+.user_{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.pass_{
+  margin-bottom: 30px;
+}
+
+.message_login{
+  margin-bottom: 30px;
+  color: purple;
+  text-decoration: none;
+
+}
+
+.btn_sign{
+
+  background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+.btn-register{
+  margin-bottom: 30px;
+  text-decoration: none;
+  color: blue;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+

@@ -1,0 +1,339 @@
+@font-face {
+  font-family: "28_day_later";
+  src: url(https://cdn.glitch.global/0f17c0ed-3f02-4594-8934-bb3f636c28fd/28%20Days%20Later.ttf?v=1648495546227);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(https://cdn.glitch.global/0f17c0ed-3f02-4594-8934-bb3f636c28fd/Poppins-Bold.ttf?v=1648554105176);
+}
+
+* {
+  box-sizing: padding-box;
+}
+
+body {
+  font-family: "Poppins";
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+.main-header {
+  padding: 0 20px;
+}
+
+.main-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7em;
+}
+.main-header__userlink{
+  color:#333;
+}
+
+.main-header__tittle {
+  text-align: center;
+  font-size: 4.5em;
+  margin: 10px 0;
+  color: #454546;
+  font-family: "28_day_later";
+}
+/*Estilos del menu*/
+.main-nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  z-index: 999999;
+}
+
+.menu {
+  position: absolute;
+  top: 175px;
+  left: 0;
+  background-color: #1c0d02;
+  background-blend-mode: darken;
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+
+}
+
+.menu__item {
+  text-align: center;
+  margin: auto;
+  border-bottom: 1px solid #ffffff;
+}
+.menu__link {
+  color: white;
+  padding: 23px;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+.menu__link:hover {
+  color: #409321;
+  background: #ffffff;
+  width: 100%;
+  position: relative;
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s;
+  z-index: 999999;
+}
+
+.icon-menu {
+  font-size: 1.5em;
+  border: 1px solid #854546; /*Con este selecciono el color del border del boton de collapse*/
+  display: block;
+  padding: 10px 15px; /* Con este aumento o disminiyo el tamaño del bloque */
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.main-header__btn {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #854546; /*Con este selecciono el color del border del boton de collapse*/
+  margin-left:20px;
+}
+
+.main-header__input {
+  display: block;
+  padding: 10px 0px;
+  width: 80%;
+
+}
+
+.lupa_input{
+  display:flex;
+  margin-left: 20%;
+}
+
+.lupa{
+
+  margin-top: 13px;
+  font-size:10px;
+  margin-left:10px
+}
+
+@media screen and (min-width: 768px) {
+
+  .menu__link {
+    padding: 25px;
+  }
+  .menu {
+  font-size: 1.3em;
+  top: 195px;
+
+  }
+  .main-header__tittle{
+  padding:10px;
+  margin-left: 40%;
+
+  }
+  .main-header__container:nth-child(3) {
+    padding: 0 20px;
+    width:22%;
+  }
+
+  .main-header__container:nth-child(1) {
+    width:56%;
+
+  }
+
+  .main-header__input {
+    display: block;
+    padding: 10px 20px;
+    margin-left: 3%;
+    width: 90%;
+  }
+  .lupa{
+    margin-left:1%;
+  }
+  .main-header__userlink{
+    margin-bottom: 15px;
+    margin-left: 90%;
+    display:flex;
+  }
+  .main-header__btn{
+    padding: 15px 10px;
+    margin-left: 80%;
+    margin-bottom: 15px;
+    display:flex;
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+  .menu__link {
+    padding: 25px;
+  }
+  .menu {
+  font-size: 1.3em;
+  top: 195px;
+
+  }
+  .main-header__tittle{
+  padding:10px;
+  margin-left: 30%;
+  font-size: 100px;
+  }
+
+  .main-header__container:nth-child(3) {
+    padding: 0 20px;
+    width:22%;
+    justify-content: space-between;
+    font-size: 20px;
+    width: 90%;
+  }
+  .main-header__container:nth-child(2) {
+    font-size: 20px;
+  }
+  .main-header__container:nth-child(1) {
+    width:100%;
+  }
+
+
+  .main-header__input {
+    display: block;
+    padding: 10px 20px;
+    justify-content: left;
+    margin: auto;
+    width: 100%;
+  }
+  .lupa{
+    margin-left:6%;
+    font-size: 20px;
+  }
+  .main-header__userlink{
+    margin-bottom: 15px;
+    margin-left: 0%;
+    display:flex;
+  }
+  .main-header__btn{
+    padding: 15px 10px;
+    margin-left: 5%;
+    margin-right: 25%;
+    margin-bottom: 15px;
+    display:flex;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+
+  #btn-menu {
+    display: none;
+  }
+
+  .container--flex {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  .main-header__container {
+    flex-wrap: wrap; /*Permite acomodar como le de la gana diferente de Flex-direction:column*/
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+  }
+
+  .main-header__tittle {
+    width: 100%;
+    font-size: 10em;
+    margin:0;
+    border-bottom: 2px solid #AAAAA0;
+  }
+  /*nth-child() función para editar elemento
+  por elemento si tengo varios elementos de la misma clase*/
+  .main-header__container:nth-child(2) {
+    order: -1;
+    display: flex;
+    width:25%;
+    padding: 0 30px;
+    align-items: flex-start;
+  }
+  .main-header__container:nth-child(1){
+    width: 50%;
+
+  }
+  .main-header__container:nth-child(3){
+    width: 25%;
+    align-items: flex-end;
+  }
+
+  .main-nav {
+    visibility: visible;
+    opacity: 1;
+    width:100%;
+
+  }
+  .menu {
+    position: static;
+    background: none;
+    display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  .menu__link {
+    color: black;
+  }
+
+  .menu__link:hover {
+    background: #333;
+    color: white;
+    width: 64%;
+  }
+  .container__2{
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+  }
+  .container__3{
+    flex-wrap:wrap;
+    flex-direction: column;
+    margin:auto;
+  }
+  .main-header__userlink{
+    margin-bottom: 20px;
+    margin-left: auto;
+  }
+  .main-header__btn{
+    margin-top: 30px;
+
+    margin-right: -10px;
+  }
+  .main-header__input{
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .lupa{
+    width: 30px;
+    margin-top: 30px;
+    font-size: 25px;
+    padding-top:10px;
+    text-align: center;
+
+  }
+  .lupa_input{
+    display:flex;
+    margin-left: auto;
+  }
+
+
+
+}/*Media Query 1024px*/

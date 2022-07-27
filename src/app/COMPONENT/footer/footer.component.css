@@ -1,0 +1,50 @@
+/****************Footer code********/
+
+.footer {
+  margin-top: 20px;
+  display: flex;
+  padding: 10px 30px;
+  background: #c1dac3;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  text-decoration: none;
+}
+
+.tittle__footer {
+  border-right: 1px solid #aaaaaa;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+.tittle__footer:nth-child(3) {
+  border:none;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.img_payment {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  text-decoration: none;
+}
+
+.class__parraf {
+  text-decoration: none;
+}
+.links {
+  color: black;
+  text-decoration: none;
+  padding-left:5px;
+}
+.links:link {
+  color: black;
+}

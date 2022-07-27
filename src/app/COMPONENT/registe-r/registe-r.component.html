@@ -1,0 +1,23 @@
+<div class="container demo">
+  <form action="/register" method="POST" class="formulario-register form">
+    <h1 class=" form_title">Registro de usuario</h1>
+      <div class="formularios">
+        <div class="form__group user_">
+          <input [(ngModel)]="user.email" type="text"  class="inputs register_i forms2 form__input" name="user" id="user" required placeholder=" ">
+          <label for="user" class="forms2 text_i form__label">Correo</label>
+        </div>
+        <div class="form__group user_">
+          <input [(ngModel)]="user.name" type="text"  class="inputs register_i forms2 form__input" name="name" required placeholder=" ">
+          <label for="name" class="forms2 text_i form__label">Nombre de usuario</label>
+        </div>
+        <div class="form__group pass_">
+          <input [(ngModel)]="user.pass" type="password" class="inputs register_i forms2 form__input" name="password" required placeholder=" ">
+          <label for="pass" class="forms2 text_i form__label">Contraseña</label>
+       </div>
+      </div>
+      <div class="buttons">
+          <a routerLink="/login" class="btn-register">¿Ya tienes cuenta? Inicia sesión</a>
+          <input (click)="addrUser()" type="submit" class="Save btn-save buttons2 btn_sign" >
+      </div>
+  </form>
+</div>
