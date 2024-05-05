@@ -1,14 +1,14 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
 /*Zona para Slider*/
 
-.container{
+.container {
   overflow: hidden;
   margin-top: 10px;
 }
-.carousel-caption{
+.carousel-caption {
   margin-bottom: 40px;
 }
-.carousel{
+.carousel {
   width: auto;
   height: 340px;
   max-height: 340px;
@@ -29,10 +29,7 @@
   /*dEFINE EL COLOR QUE VA TENER CUANDO EL BOTÓN PASA POR ENCIMA*/
   z-index: 99999999;
   background: orange;
-
 }
-
-
 
 /*Para la transiciones raras*
 /*Imagenes dinamicas para mostrar nuestros servicios*/
@@ -99,7 +96,7 @@
 }
 
 /*Estilos para los productos*/
-.main-tittle{
+.main-tittle {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -118,7 +115,6 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .product:before {
@@ -168,9 +164,9 @@
 }
 /*Aquí utilizo esta estructura para que al pasar por toda la imagen cambie el hover*/
 .product:hover .product_icon {
-  color: #FF4E00;
+  color: #ff4e00;
 }
-.product__description{
+.product__description {
   font-size: small;
 }
 
@@ -178,7 +174,6 @@
 /*Responsive design*/
 /*Estilos respoonsives para tablet*/
 @media screen and (min-width: 768px) {
-
   .endmain__item {
     height: 200px;
     width: 100%;
@@ -186,12 +181,12 @@
   .container__endmain {
     display: flex;
   }
-  .carousel{
+  .carousel {
     width: auto;
     height: 500px;
     max-height: 500px;
   }
-  .carousel-caption{
+  .carousel-caption {
     margin-bottom: 300px;
   }
   .container-products {
@@ -204,25 +199,23 @@
   .product__img {
     width: 240px;
     height: 350px;
-
   }
 }
-
 
 @media screen and (min-width: 1024px) {
   .endmain__item {
     height: 300px;
     width: 100%;
   }
-  .carousel{
+  .carousel {
     width: auto;
     height: 700px;
     max-height: 700px;
   }
-  .carousel-caption{
+  .carousel-caption {
     margin-bottom: 450px;
   }
   .container-products {
-    grid-template-columns: repeat(5 , 1fr); /*Otra forma de poner columnas*/
+    grid-template-columns: repeat(5, 1fr); /*Otra forma de poner columnas*/
   }
 }
