@@ -1,0 +1,30 @@
+.carousel {
+  display: flex;
+  overflow-x: hidden; /* Solo ocultar la barra de desplazamiento horizontal */
+}
+
+.elements {
+  flex: 0 0 100%;
+  margin-right: 20px;
+  background-color: green;
+  max-height: 400px;
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+.carousel.animate {
+  animation: scroll 5s infinite;
+}
