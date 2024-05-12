@@ -4,7 +4,6 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ConditionstermsComponent } from './components/conditionsterms/conditionsterms.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
-import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { PromosComponent } from './components/promos/promos.component';
@@ -26,6 +25,13 @@ const routes: Routes = [
   { path: 'contact', component: ContactoComponent },
   { path: 'conditions', component: ConditionstermsComponent },
   { path: 'register', component: RegisteRComponent },
+  {
+    path: 'uploadProduct',
+    loadChildren: () =>
+      import('./pages/upload-product/upload-product.module').then(
+        (m) => m.UploadProductModule
+      ),
+  },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 

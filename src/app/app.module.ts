@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { PromosComponent } from './components/promos/promos.component';
@@ -24,16 +23,19 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { CargarScriptsService } from './cargar-scripts.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { SharedModule } from './shared/shared.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
     ProductosComponent,
     AboutusComponent,
     PromosComponent,
     ContactoComponent,
     CartComponent,
+    HeaderComponent,
     LoginComponent,
     ConditionstermsComponent,
     HeaderComponent,
@@ -49,6 +51,8 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     HttpClientModule,
     MdbCarouselModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [
     CargarScriptsService,
