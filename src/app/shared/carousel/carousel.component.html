@@ -1,0 +1,25 @@
+<div class="container" #carousel>
+  <div class="card">
+    <p-carousel
+      [value]="slides"
+      [numVisible]="1"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [showIndicators]="false"
+      [showNavigators]="false"
+      [autoplayInterval]="3000"
+    >
+      <ng-template let-carousel pTemplate="item">
+        <div class="content">
+          <img src="{{ carousel.image }}" alt="" class="image" />
+          <div class="carousel-caption">
+            <h2 class="title">{{ carousel.message }}</h2>
+            <p class="message">Triple M</p>
+            <a routerLink="/cart" class="slider2_btn">Comprar Aquí</a>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

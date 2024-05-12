@@ -6,39 +6,42 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { InicioComponent } from './COMPONENT/inicio/inicio.component';
-import { ProductosComponent } from './COMPONENT/productos/productos.component';
-import { AboutusComponent } from './COMPONENT/aboutus/aboutus.component';
-import { PromosComponent } from './COMPONENT/promos/promos.component';
-import { ContactoComponent } from './COMPONENT/contacto/contacto.component';
-import { CartComponent } from './COMPONENT/cart/cart.component';
-import { LoginComponent } from './COMPONENT/login/login.component';
-import { ConditionstermsComponent } from './COMPONENT/conditionsterms/conditionsterms.component';
-import { HeaderComponent } from './COMPONENT/header/header.component';
-import { FooterComponent } from './COMPONENT/footer/footer.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { PromosComponent } from './components/promos/promos.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { CartComponent } from './components/cart/cart.component';
+import { LoginComponent } from './components/login/login.component';
+import { ConditionstermsComponent } from './components/conditionsterms/conditionsterms.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { RegisteRComponent } from './COMPONENT/registe-r/registe-r.component';
-import { ProductoComponent } from './COMPONENT/producto/producto.component';
+import { RegisteRComponent } from './components/registe-r/registe-r.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 import { CargarScriptsService } from './cargar-scripts.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { SharedModule } from './shared/shared.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
     ProductosComponent,
     AboutusComponent,
     PromosComponent,
     ContactoComponent,
     CartComponent,
+    HeaderComponent,
     LoginComponent,
     ConditionstermsComponent,
     HeaderComponent,
     FooterComponent,
     RegisteRComponent,
-    ProductoComponent
+    ProductoComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,11 +50,15 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    MdbCarouselModule
+    MdbCarouselModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [CargarScriptsService,
-            JwtHelperService,
-            {provide:JWT_OPTIONS,useValue:JWT_OPTIONS}],
-  bootstrap: [AppComponent]
+  providers: [
+    CargarScriptsService,
+    JwtHelperService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

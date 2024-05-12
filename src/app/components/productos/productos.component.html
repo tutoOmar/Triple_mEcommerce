@@ -1,34 +1,33 @@
-<div class="container_p ">
-  <hr>
-  <h2 class="main-tittle">Nuestros productos </h2>
-  <hr>
+<div class="container_p">
+  <hr />
+  <h2 class="main-tittle">Nuestros productos</h2>
+  <hr />
   <nav class="navbar navbar-dark bg-dark h1 nav__">
-   <div class="nav_container">
-    Morrales
-   </div>
+    <div class="nav_container">Morrales</div>
   </nav>
   <section class="container-products">
     <div class="product" *ngFor="let product of ListarProductos">
-      <div *ngIf="(product.tipo=='Morral')">
-          <img
-          src="{{product.url_img}}"
-          class="image_product product__img "
-        />
+      <div *ngIf="product.type == 'backpack'">
+        <img src="{{ product.url_img }}" class="image_product product__img" />
         <div class="product__description">
-          <a href="#"><h3 class="product__tittle">{{product.nombre_p}}</h3></a>
-          <p class="product__litraje product__description">{{product.description_p}}</p>
-          <span class="product__price">$ {{product.precio}} COP </span>
+          <a href="#"
+            ><h3 class="product__tittle">{{ product.name }}</h3></a
+          >
+          <p class="product__litraje product__description">
+            {{ product.description }}
+          </p>
+          <span class="product__price">$ {{ product.price }} COP </span>
         </div>
         <a href="#"><i class="product_icon fa-solid fa-cart-plus"></i></a>
       </div>
     </div>
   </section>
-  <nav class="navbar navbar-dark bg-dark h1 nav__">
+  <!-- <nav class="navbar navbar-dark bg-dark h1 nav__">
     <div class="nav_container">
       Pecheras y chalecos.
     </div>
-  </nav>
-  <section class="container-products">
+  </nav> -->
+  <!-- <section class="container-products">
     <div class="product" *ngFor="let product of ListarProductos2">
       <div *ngIf="(product.tipo=='Pechera') || (product.tipo=='Chaleco') ">
         <img
@@ -43,5 +42,5 @@
         <a href="#"><i class="product_icon fa-solid fa-cart-plus"></i></a>
       </div>
     </div>
-  </section>
+  </section> -->
 </div>

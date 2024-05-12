@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
 
 .container-products {
   /*FUncion Grip muy util para temas de galerias*/
@@ -14,7 +14,6 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .product__img {
@@ -47,24 +46,24 @@
 }
 /*Aquí utilizo esta estructura para que al pasar por toda la imagen cambie el hover*/
 .product:hover .product_icon {
-  color: #FF4E00;
+  color: #ff4e00;
 }
-.product__description{
+.product__description {
   font-size: small;
 }
 
-.main-tittle{
+.main-tittle {
   text-align: center;
   margin-top: 20px;
   font-size: 2.5em;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.nav__{
+.nav__ {
   font-size: 1.8em;
-  animation: Entrada_desde_Izq .3s ease;
+  animation: Entrada_desde_Izq 0.3s ease;
 }
-.nav_container{
-  background-color: #c1dac3;;
+.nav_container {
+  background-color: #c1dac3;
   width: 100%;
   height: 50px;
   padding: 6px 5%;
@@ -85,25 +84,22 @@
   .product__img {
     width: 240px;
     height: 350px;
-
   }
 }
-
 
 @media screen and (min-width: 1024px) {
   .container-products {
-    grid-template-columns: repeat(5 , 1fr); /*Otra forma de poner columnas*/
+    grid-template-columns: repeat(5, 1fr); /*Otra forma de poner columnas*/
   }
 }
-
 
 /*Animarciones de entrada y salida*/
 
 @keyframes Entrada_desde_Izq {
-  from{
+  from {
     transform: translateX(-200%);
   }
-  to{
+  to {
     transform: translateX(0);
   }
 }

@@ -1,0 +1,46 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="url_img">URL de la Imagen:</label>
+    <input type="text" id="url_img" formControlName="url_img" required />
+  </div>
+  <div>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" formControlName="name" required />
+  </div>
+  <div>
+    <label for="description">Descripción:</label>
+    <textarea
+      id="description"
+      formControlName="description"
+      required
+    ></textarea>
+  </div>
+  <div>
+    <label for="price">Precio:</label>
+    <input type="number" id="price" formControlName="price" required />
+  </div>
+  <div>
+    <label for="quantity">Cantidad:</label>
+    <input type="number" id="quantity" formControlName="quantity" required />
+  </div>
+  <div>
+    <label for="liter">litraje:</label>
+    <input type="number" id="liter" formControlName="liter" required />
+  </div>
+  <div>
+    <label for="state">Estado:</label>
+    <select id="state" formControlName="state" required>
+      <option value="available">Disponible</option>
+      <option value="sold_out">Agotado</option>
+    </select>
+  </div>
+  <div>
+    <label for="type">Tipo:</label>
+    <select id="type" formControlName="type" required>
+      <option value="backpack">Morral</option>
+      <option value="chest">Pecheras</option>
+      <option value="chest">Otros</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="!productForm.valid">Guardar</button>
+</form>
