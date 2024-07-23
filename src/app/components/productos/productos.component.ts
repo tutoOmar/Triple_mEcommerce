@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductInterface } from 'src/app/models/product.interface';
 import { Product } from 'src/app/service/products.service';
 import { ProductsService } from 'src/app/services/products.service';
@@ -13,13 +14,18 @@ export class ProductosComponent implements OnInit {
 
   constructor(
     // private ProduService: ProductsService
-    private listProductsService: ProductsService
+    private listProductsService: ProductsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.listarProductos('Morral');
     // this.listarProductos2('Pechera');
   }
+  /**
+   *
+   * @param type
+   */
   listarProductos(type: string) {
     this.listProductsService.getProducts().subscribe(
       (product) => {
@@ -29,13 +35,10 @@ export class ProductosComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-  // listarProductos2(type: string) {
-  //   this.ProduService.getProductType(type).subscribe(
-  //     (res) => {
-  //       console.log(res);
-  //       this.ListarProductos2 = <any>res;
-  //     },
-  //     (err) => console.log(err)
-  //   );
-  // }
+  /**
+   *
+   */
+  goToProduct(productId: number) {
+    this.router.navigate(['/productUnique', productId]);
+  }
 }

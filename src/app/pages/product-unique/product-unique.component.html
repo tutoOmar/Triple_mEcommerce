@@ -1,0 +1,7 @@
+<div>
+  <div *ngIf="product$ | async as product">
+    <app-product-card-unique
+      [listProducts]="[product]"
+    ></app-product-card-unique>
+  </div>
+</div>

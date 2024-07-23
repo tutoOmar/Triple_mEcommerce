@@ -23,9 +23,11 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { CargarScriptsService } from './cargar-scripts.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { SharedModule } from './shared/shared.module';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     MdbCarouselModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
   ],
   providers: [
     CargarScriptsService,

@@ -1,0 +1,31 @@
+<div class="product-card">
+  <div class="product-images">
+    <img class="main-image" [src]="mainImage" alt="Product Image" />
+    <div class="thumbnail-images">
+      <img
+        *ngFor="let image of productImages"
+        [src]="image"
+        (click)="changeMainImage(image)"
+        alt="Product Thumbnail"
+      />
+    </div>
+  </div>
+  <div class="product-details">
+    <div class="product__description">
+      <a
+        ><h3 class="product__title">{{ product.name }}</h3></a
+      >
+      <p class="product__liters product__description">
+        {{ product.description }}
+      </p>
+      <span class="product__price"
+        >$ {{ product.price | number : "1.0-0" }} COP
+      </span>
+      <p class="product__additional">
+        Litros: {{ product.liter }} | Cantidad: {{ product.quantity }} | Estado:
+        {{ product.state }}
+      </p>
+    </div>
+    <a class="cart-icon" href="https://wa.link/0lwsf9"> Comprar </a>
+  </div>
+</div>
