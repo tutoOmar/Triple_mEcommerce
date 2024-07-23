@@ -1,5 +1,5 @@
 export interface ProductInterface {
-  id: number;
+  id: string;
   url_img: string;
   name: string;
   description: string;
@@ -8,4 +8,5 @@ export interface ProductInterface {
   state: string;
   type: string;
   liter: string;
+  url_images: string[];
 }

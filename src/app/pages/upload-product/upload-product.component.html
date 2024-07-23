@@ -1,7 +1,12 @@
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="url_img">URL de la Imagen:</label>
-    <input type="text" id="url_img" formControlName="url_img" required />
+    <label for="image">Imagen:</label>
+    <input
+      type="file"
+      id="image"
+      (change)="onFileSelected($event)"
+      accept="image/*"
+    />
   </div>
   <div>
     <label for="name">Nombre:</label>

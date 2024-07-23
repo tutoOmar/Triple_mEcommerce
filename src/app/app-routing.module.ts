@@ -32,6 +32,13 @@ const routes: Routes = [
         (m) => m.UploadProductModule
       ),
   },
+  {
+    path: 'productUnique/:id',
+    loadChildren: () =>
+      import('./pages/product-unique/product-unique.module').then(
+        (m) => m.ProductUniqueModule
+      ),
+  },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 

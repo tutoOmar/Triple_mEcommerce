@@ -2,14 +2,18 @@
   <div>
     <img src="{{ product.url_img }}" class="image_product product__img" />
     <div class="product__description">
-      <a href="#"
+      <a (click)="goToProduct(product.id)"
         ><h3 class="product__tittle">{{ product.name }}</h3></a
       >
       <p class="product__litraje product__description">
         {{ product.description }}
       </p>
-      <span class="product__price">$ {{ product.price }} COP </span>
+      <span class="product__price"
+        >$ {{ product.price | number : "1.0-0" }} COP
+      </span>
     </div>
-    <a href="#"><i class="product_icon fa-solid fa-cart-plus"></i></a>
+    <a (click)="goToProduct(product.id)">
+      <i class="product_icon fa-solid fa-cart-plus"></i>
+    </a>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductInterface } from 'src/app/models/product.interface';
 
 @Component({
@@ -8,7 +9,15 @@ import { ProductInterface } from 'src/app/models/product.interface';
 })
 export class ProductCardComponent implements OnInit {
   @Input() listProducts: ProductInterface[] = [];
-  constructor() {}
-
+  constructor(private router: Router) {}
+  /**
+   *
+   */
+  goToProduct(productId: string) {
+    this.router.navigate(['/productUnique', productId]);
+  }
+  /**
+   *
+   */
   ngOnInit(): void {}
 }

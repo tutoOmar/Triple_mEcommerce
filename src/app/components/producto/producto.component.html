@@ -1,1 +1,13 @@
-<p>producto works!</p>
+<div class="product-container" *ngIf="product$ as product">
+  <div class="product-image">
+    <img [src]="product.url_img" alt="{{ product.name }}" />
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">{{ product.name }}</h1>
+    <p class="product-description">{{ product.description }}</p>
+    <span class="product-price">$ {{ product.price }} COP</span>
+    <button class="btn btn-primary add-to-cart">
+      <i class="fa-solid fa-cart-plus"></i> Comprar
+    </button>
+  </div>
+</div>
